@@ -1,0 +1,100 @@
+<html>
+<head>
+<title> My first form </title>
+<script language=javascript>
+	var submitFlag =false;
+	var algList;
+	var healthList;
+	function setSubmitFlag(){
+		submitFlag = true;
+
+		alert(algList);
+		//print(submitFlag);
+	}
+
+	function getAlgCheckboxValue()  {
+		// 선택된 목록 가져오기
+		const query = 'input[name="alg"]:checked';
+		let result = '';
+		const selectedEls = 
+			document.querySelectorAll(query);
+		
+		// 선택된 목록에서 value 찾기
+		
+		selectedEls.forEach((el) => {
+		  result += el.value + ' ';
+		});
+		
+		// 출력
+		document.getElementById('result').innerText
+		  = result;
+		algList = result;
+
+	  }
+
+	  function getHealthCheckboxValue()  {
+		// 선택된 목록 가져오기
+		const query = 'input[name="health"]:checked';
+		let result = '';
+		const selectedEls = 
+			document.querySelectorAll(query);
+		
+		// 선택된 목록에서 value 찾기
+		
+		selectedEls.forEach((el) => {
+		  result += el.value + ' ';
+		});
+		
+		// 출력
+		document.getElementById('res').innerText
+		  = result;
+		healthList = result;
+	  }
+</script>
+</head>
+
+<body>
+	
+<form action="https://aaaawew.imweb.me/Collection-1" method="POST">
+	<div>
+		<strong>알러지</strong>
+		<p>
+		<input type = "checkbox" name = "alg" value = '닭' onclick='getAlgCheckboxValue()'> 닭
+		<input type = "checkbox" name = "alg" value = '오리' onclick='getAlgCheckboxValue()'> 오리
+		<input type = "checkbox" name = "alg" value = '칠면조' onclick='getAlgCheckboxValue()'> 칠면조
+		<input type = "checkbox" name = "alg" value = '돼지' onclick='getAlgCheckboxValue()'> 돼지
+		<input type = "checkbox" name = "alg" value = '소' onclick='getAlgCheckboxValue()'> 소
+		<input type = "checkbox" name = "alg" value = '연어' onclick='getAlgCheckboxValue()'> 연어
+		<input type = "checkbox" name = "alg" value = '어류' onclick='getAlgCheckboxValue()'> 어류
+		<input type = "checkbox" name = "alg" value = '양' onclick='getAlgCheckboxValue()'> 양
+		<input type = "checkbox" name = "alg" value = '사슴' onclick='getAlgCheckboxValue()'> 사슴
+		<input type = "checkbox" name = "alg" value = '멧돼지' onclick='getAlgCheckboxValue()'> 멧돼지
+		<input type = "checkbox" name = "alg" value = '곤충' onclick='getAlgCheckboxValue()'> 곤충
+		<input type = "checkbox" name = "alg" value = '콩' onclick='getAlgCheckboxValue()'> 콩
+		<input type = "checkbox" name = "alg" value = '곡류' onclick='getAlgCheckboxValue()'> 곡류
+		<input type = "checkbox" name = "alg" value = '과일' onclick='getAlgCheckboxValue()'> 과일
+		<input type = "checkbox" name = "alg" value = '효모' onclick='getAlgCheckboxValue()'> 효모
+		<input type = "checkbox" name = "alg" value = '달걀' onclick='getAlgCheckboxValue()'> 달걀
+		<input type = "checkbox" name = "alg" value = '유제품' onclick='getAlgCheckboxValue()'> 유제품
+		<input type = "checkbox" name = "alg" value = '아마' onclick='getAlgCheckboxValue()'> 아마
+		<input type = "checkbox" name = "alg" value = '잘모르겠어요' onclick='getAlgCheckboxValue()'> 잘 모르겠어요
+		<!-- checkbox: 복수 선택 -->
+	</div>
+	<strong>건강고려사항</strong>
+	<p></p>
+	<input type = "checkbox" name = "health" value = '뼈/관절' onclick="getHealthCheckboxValue()"> 뼈/관절
+	<input type = "checkbox" name = "health" value = '피부/피모' onclick="getHealthCheckboxValue()"> 피부/피모
+	<input type = "checkbox" name = "health" value = '눈물' onclick="getHealthCheckboxValue()"> 눈물
+	<input type = "checkbox" name = "health" value = '소화기' onclick="getHealthCheckboxValue()"> 소화기
+	<input type = "checkbox" name = "health" value = '다이어트' onclick="getHealthCheckboxValue()"> 다이어트
+	<input type = "checkbox" name = "health" value = '심장' onclick="getHealthCheckboxValue()"> 심장
+	<input type = "checkbox" name = "health" value = '기타' onclick="getHealthCheckboxValue()"> 기타
+	<div>
+		<button onClick="setSubmitFlag()">aaa</button>
+		<button type = "submit" onClick='setSubmitFlag()'>Submit</button>
+	</div>
+	<div id="result"></div>
+	<div id="res"></div>
+</form>
+</body>
+</html>
